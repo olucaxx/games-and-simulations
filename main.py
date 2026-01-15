@@ -49,19 +49,19 @@ while running:
 
     # - COLOCAR AREIA
     if pressing and 0 <= world_x < WIDTH and 0 <= world_y < HEIGHT:
-        world[world_y][world_x] = 0
+        world[world_y][world_x] = hue_value
+        hue_value+=1
 
-    # - RENDER WORLD
     if hue_value > 360: # garante o loop da roda de cores
         hue_value = 0
 
+    # - RENDER WORLD
     screen.fill((0,0,0)) # pinta toda a SCREEN nao o world
 
     pixel_y, pixel_x = np.where(world >= 0)
     pixels = list(zip(pixel_y, pixel_x))
 
     for y, x in pixels:
-        print(world[y][x])
         pygame.draw.rect(
                     screen,
                     LUT[world[y][x]], 
@@ -75,7 +75,6 @@ while running:
             LUT[hue_value],
             (world_x * SCALE, world_y * SCALE, SCALE, SCALE)
         )
-    hue_value+=1
 
     pygame.display.flip()
     clock.tick(FPS)
