@@ -4,8 +4,8 @@ import sys
 from snake import Snake
 
 # config
-WIDTH = 50
-HEIGHT = 50
+WIDTH = 20
+HEIGHT = WIDTH
 SCALE = 15
 FPS = 5
 
@@ -17,7 +17,7 @@ clock = pygame.time.Clock()
 
 running = True
 
-snake = Snake()
+snake = Snake(WIDTH)
 
 while running:        
     # - EVENTOS

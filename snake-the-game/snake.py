@@ -9,8 +9,10 @@ KEY_MAP = {
 } 
 
 class Snake:
-    def __init__(self):
-        self.body_sections = [(24,22),(24,23),(24,24),(24,25),(24,26)]
+    def __init__(self, screen_size):
+        middle = (screen_size // 2) - 1
+        # garante que ela fique no centro, independente do tamanho da tela
+        self.body_sections = [(middle, middle + x) for x in range(-2,3)]
         self.mov_direction = (0,-1)
 
     def change_direction(self, key) -> bool:
