@@ -4,7 +4,7 @@
 ![pygame](https://img.shields.io/badge/pygame-2.x-green)
 ![repo size](https://img.shields.io/github/repo-size/olucaxx/snake)
 
-https://github.com/olucaxx/snake/blob/main/assets/snake-demo.mp4
+![demo](./assets/snake-demo.gif)
 
 ## sobre o projeto
 
